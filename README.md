@@ -10,6 +10,7 @@ Este projeto mantem a ideia de compartilhar configuracoes produtivas do VS Code,
 | --- | --- | --- |
 | Python | `profiles/python.code-profile` | Projetos Python modernos com lint e formatacao via Ruff. |
 | Node.js | `profiles/node.code-profile` | Projetos Node.js com JavaScript/TypeScript, ESLint e Prettier. |
+| Go | `profiles/go.code-profile` | Projetos Go com suporte oficial, gopls, debug, testes e formatacao padrao. |
 | Angular | `profiles/angular.code-profile` | Aplicacoes Angular com TypeScript, templates, ESLint e Prettier. |
 | Java | `profiles/java.code-profile` | Projetos Java puros, com debug, testes e build tools comuns. |
 | Spring Boot | `profiles/spring-boot.code-profile` | APIs e servicos Spring Boot com ferramentas Java e Spring. |
