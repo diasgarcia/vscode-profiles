@@ -14,7 +14,10 @@ Perfil para desenvolvimento em C no VS Code usando WSL, com foco em aprender e t
 - `icrawl.discord-vscode` - Discord Presence.
 - `thang-nm.flow-icons` - tema de icones.
 - `mechatroner.rainbow-csv` - leitura de CSV/TSV.
+- `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - permite abrir pastas, terminal, debug e extensoes dentro do ambiente Linux do WSL.
+- `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
+- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
 - `ms-vscode.cpptools` - suporte oficial da Microsoft para C/C++, IntelliSense, navegacao, formatacao e debug.
 
 Para o seu caso, faz sentido deixar `ms-vscode-remote.remote-wsl` e `ms-vscode.cpptools` como obrigatorias. O VS Code fica no Windows, mas o projeto roda no Linux do WSL, que e onde a toolchain de C deve viver.

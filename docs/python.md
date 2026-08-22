@@ -13,6 +13,10 @@ Perfil para desenvolvimento Python moderno no VS Code, com foco em autocomplete,
 - `icrawl.discord-vscode` - Discord Presence.
 - `thang-nm.flow-icons` - tema de icones.
 - `mechatroner.rainbow-csv` - leitura de CSV/TSV.
+- `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
+- `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
+- `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
+- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
 - `ms-python.python` - suporte oficial a Python.
 - `ms-python.vscode-pylance` - IntelliSense e type checking com Pyright/Pylance.
 - `ms-python.debugpy` - debug de codigo Python.

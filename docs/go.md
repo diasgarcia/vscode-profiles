@@ -13,6 +13,10 @@ Perfil para desenvolvimento Go moderno no VS Code, com foco em suporte oficial d
 - `icrawl.discord-vscode` - Discord Presence.
 - `thang-nm.flow-icons` - tema de icones.
 - `mechatroner.rainbow-csv` - leitura de CSV/TSV.
+- `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
+- `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
+- `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
+- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
 - `golang.go` - extensao oficial de Go, mantida pelo Go Team at Google, com suporte a linguagem, `gopls`, debug, testes, formatacao e ferramentas da stack Go.
 
 A extensao oficial cobre o que normalmente seria dividido em varias extensoes: IntelliSense, navegacao, diagnosticos, testes, debug com Delve e integracao com ferramentas como `gofmt`, `goimports` e `gopls`.

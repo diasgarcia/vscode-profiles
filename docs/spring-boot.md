@@ -13,6 +13,10 @@ Perfil para desenvolvimento de APIs e servicos Spring Boot no VS Code, combinand
 - `icrawl.discord-vscode` - Discord Presence.
 - `thang-nm.flow-icons` - tema de icones.
 - `mechatroner.rainbow-csv` - leitura de CSV/TSV.
+- `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
+- `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
+- `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
+- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
 - `vscjava.vscode-java-pack` - base Java.
 - `vscjava.vscode-java-dependency` - Project Manager for Java.
 - `redhat.java` - linguagem Java, IntelliSense, navegacao e formatacao.
@@ -21,6 +25,8 @@ Perfil para desenvolvimento de APIs e servicos Spring Boot no VS Code, combinand
 - `vscjava.vscode-maven` - suporte a projetos Maven.
 - `vscjava.vscode-gradle` - suporte a projetos Gradle.
 - `vmware.vscode-boot-dev-pack` - Spring Boot Tools, Spring Initializr e Spring Boot Dashboard.
+- `vscjava.vscode-spring-boot-dashboard` - painel para acompanhar aplicacoes Spring Boot em execucao, instalado explicitamente alem do pack.
+- `vscjava.vscode-spring-initializr` - gera projetos Spring Boot pelo Spring Initializr direto no VS Code, instalado explicitamente alem do pack.
 - `redhat.vscode-yaml` - suporte a YAML, comum em configuracoes Spring.
 
 As extensoes Java aparecem explicitamente mesmo quando tambem sao cobertas pelo Java Extension Pack, para deixar o conteudo do perfil claro no preview de importacao.

@@ -13,6 +13,10 @@ Perfil para desenvolvimento Java puro no VS Code, com suporte a linguagem, debug
 - `icrawl.discord-vscode` - Discord Presence.
 - `thang-nm.flow-icons` - tema de icones.
 - `mechatroner.rainbow-csv` - leitura de CSV/TSV.
+- `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
+- `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
+- `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
+- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
 - `vscjava.vscode-java-pack` - pacote oficial/consolidado com suporte a Java, debug, testes e build tools.
 - `vscjava.vscode-java-dependency` - Project Manager for Java.
 - `redhat.java` - linguagem Java, IntelliSense, navegacao e formatacao.
