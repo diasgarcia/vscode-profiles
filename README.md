@@ -29,6 +29,22 @@ Todos os perfis incluem como base:
 - `ms-vscode-remote.remote-containers`
 - `tinkertrain.theme-panda`
 
+Todos os perfis incluem tambem um bloco de settings base:
+
+- `workbench.iconTheme: flow-dim`
+- `workbench.colorTheme: Panda Syntax`
+- `workbench.startupEditor: none`
+- `chat.disableAIFeatures: true`
+- `github.copilot.enable: false`
+- `editor.fontSize: 16`
+- `editor.tabSize: 4` (8 no Assembly, 2 no NestJS)
+- `editor.insertSpaces: true`
+- `editor.matchBrackets: near`
+- `files.encoding: utf8`
+- `editor.formatOnSave: true`
+- `files.insertFinalNewline: true`
+- `files.trimTrailingWhitespace: true`
+
 Os arquivos seguem o formato exportado pelo VS Code: `name`, `settings`, `extensions` e `globalState`. O campo `globalState` fica presente apenas por compatibilidade, com `storage` vazio.
 
 ## Como Importar
