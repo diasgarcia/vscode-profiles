@@ -10,6 +10,7 @@ Este projeto mantem a ideia de compartilhar configuracoes produtivas do VS Code,
 | --- | --- | --- |
 | Python | `profiles/python.code-profile` | Projetos Python modernos com lint e formatacao via Ruff. |
 | Node.js | `profiles/node.code-profile` | Projetos Node.js com JavaScript/TypeScript, ESLint e Prettier. |
+| NestJS | `profiles/nest.code-profile` | APIs Node.js com NestJS, TypeScript, ESLint e Prettier. |
 | Go | `profiles/go.code-profile` | Projetos Go com suporte oficial, gopls, debug, testes e formatacao padrao. |
 | C | `profiles/c.code-profile` | Projetos C no WSL com WSL, C/C++, GCC, GDB e terminal Linux. |
 | Assembly | `profiles/assembly.code-profile` | Desenvolvimento Assembly Intel 64 (x86-64) com NASM/YASM/GAS, debug nativo via GDB e editor hexadecimal. |
@@ -23,6 +24,10 @@ Todos os perfis incluem como base:
 - `icrawl.discord-vscode`
 - `thang-nm.flow-icons`
 - `mechatroner.rainbow-csv`
+- `cweijan.vscode-office`
+- `ms-vscode-remote.remote-wsl`
+- `ms-vscode-remote.remote-containers`
+- `tinkertrain.theme-panda`
 
 Os arquivos seguem o formato exportado pelo VS Code: `name`, `settings`, `extensions` e `globalState`. O campo `globalState` fica presente apenas por compatibilidade, com `storage` vazio.
 
