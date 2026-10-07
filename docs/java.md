@@ -2,6 +2,8 @@
 
 Perfil para desenvolvimento Java puro no VS Code, com suporte a linguagem, debug, testes, Maven, Gradle e gerenciamento de projetos via Java Extension Pack.
 
+Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab manual com quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
+
 ## Indicado Para
 
 - Projetos Java sem Spring.
@@ -16,10 +18,9 @@ Perfil para desenvolvimento Java puro no VS Code, com suporte a linguagem, debug
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
-- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
 - `vscjava.vscode-java-pack` - pacote oficial/consolidado com suporte a Java, debug, testes e build tools.
 - `vscjava.vscode-java-dependency` - Project Manager for Java.
-- `redhat.java` - linguagem Java, IntelliSense, navegacao e formatacao.
+- `redhat.java` - linguagem Java, IntelliSense e navegacao; formatacao desativada neste perfil.
 - `vscjava.vscode-java-debug` - debug de aplicacoes Java.
 - `vscjava.vscode-java-test` - execucao e exploracao de testes.
 - `vscjava.vscode-maven` - suporte a projetos Maven.
@@ -36,14 +37,25 @@ Algumas dessas extensoes tambem fazem parte do Java Extension Pack, mas ficam li
 
 ```json
 {
+  "editor.autoIndent": "none",
+  "editor.detectIndentation": false,
+  "editor.autoIndentOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.organizeImports": "never"
+  },
   "java.configuration.updateBuildConfiguration": "interactive",
   "java.compile.nullAnalysis.mode": "automatic",
-  "java.saveActions.organizeImports": true,
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  }
+  "java.saveActions.organizeImports": false,
+  "java.format.enabled": false,
+  "java.format.onType.enabled": false
 }
 ```
+
+O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
 
 ## Ferramentas Externas
 

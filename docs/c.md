@@ -2,6 +2,8 @@
 
 Perfil para desenvolvimento em C no VS Code usando WSL, com foco em aprender e trabalhar com a toolchain real do Linux: terminal, GCC/Clang, GDB, Make e CMake quando fizer sentido.
 
+Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab manual com quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
+
 ## Indicado Para
 
 - Estudos de linguagem C no Windows usando WSL.
@@ -17,10 +19,9 @@ Perfil para desenvolvimento em C no VS Code usando WSL, com foco em aprender e t
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - permite abrir pastas, terminal, debug e extensoes dentro do ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
-- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
-- `ms-vscode.cpptools` - suporte oficial da Microsoft para C/C++, IntelliSense, navegacao, formatacao e debug.
+- `ms-vscode.cpptools` - suporte oficial da Microsoft para C/C++, IntelliSense, navegacao e debug; formatacao desativada neste perfil.
 
-Para o seu caso, faz sentido deixar `ms-vscode-remote.remote-wsl` e `ms-vscode.cpptools` como obrigatorias. O VS Code fica no Windows, mas o projeto roda no Linux do WSL, que e onde a toolchain de C deve viver.
+A combinacao de `ms-vscode-remote.remote-wsl` e `ms-vscode.cpptools` permite manter o VS Code no Windows e executar o projeto e a toolchain de C no Linux do WSL.
 
 ## Extensoes Opcionais
 
@@ -40,18 +41,25 @@ gcc main.c -o main
 
 ```json
 {
+  "editor.autoIndent": "none",
+  "editor.detectIndentation": false,
+  "editor.autoIndentOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.organizeImports": "never"
+  },
   "C_Cpp.default.compilerPath": "/usr/bin/gcc",
   "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
   "C_Cpp.default.cStandard": "c17",
   "C_Cpp.errorSquiggles": "enabled",
-  "C_Cpp.formatting": "clangFormat",
-  "C_Cpp.clang_format_fallbackStyle": "LLVM",
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools",
-    "editor.formatOnSave": true
-  }
+  "C_Cpp.formatting": "disabled"
 }
 ```
+
+O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
 
 Esses settings assumem uso dentro do WSL. Se o projeto for aberto fora do WSL, o `compilerPath` `/usr/bin/gcc` provavelmente nao existe no Windows e deve ser ajustado.
 
@@ -64,4 +72,4 @@ Esses settings assumem uso dentro do WSL. Se o projeto for aberto fora do WSL, o
 - `gdb` para debug.
 - `make` para projetos com `Makefile`.
 - `cmake` apenas quando o projeto usar CMake.
-- `clang-format` se quiser formatacao consistente pelo terminal e pelo VS Code.
+- `clang-format` e opcional para formatacao pelo terminal; a formatacao de C/C++ esta desativada no perfil.

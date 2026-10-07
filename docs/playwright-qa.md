@@ -1,6 +1,8 @@
 # Playwright / QA
 
-Perfil para automacao de testes com Playwright, JavaScript e TypeScript, mantendo lint e formatacao consistentes.
+Perfil para automacao de testes com Playwright, JavaScript e TypeScript, com execucao, debug e inspecao de testes.
+
+Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab manual com quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
 
 ## Indicado Para
 
@@ -16,11 +18,7 @@ Perfil para automacao de testes com Playwright, JavaScript e TypeScript, mantend
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
-- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
 - `ms-playwright.playwright` - execucao, debug e inspecao de testes Playwright.
-- `dbaeumer.vscode-eslint` - lint para JavaScript/TypeScript.
-- `esbenp.prettier-vscode` - formatacao.
-- `editorconfig.editorconfig` - respeito ao `.editorconfig` do projeto.
 
 ## Extensoes Opcionais
 
@@ -34,27 +32,26 @@ Para suites de QA, `humao.rest-client` e a escolha mais leve quando os requests 
 
 ```json
 {
+  "editor.autoIndent": "none",
+  "editor.detectIndentation": false,
+  "editor.autoIndentOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll": "never",
+    "source.organizeImports": "never"
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
 ```
+
+O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
 
 ## Ferramentas Externas
 
 - Node.js instalado.
 - Playwright instalado no projeto, normalmente com `npm init playwright` ou equivalente.
 - Browsers do Playwright instalados com `npx playwright install`.
-- ESLint e Prettier instalados no projeto para alinhar editor e CI.
+- ESLint e Prettier sao opcionais no projeto para uso pelo terminal ou CI; o perfil nao inclui suas extensoes.

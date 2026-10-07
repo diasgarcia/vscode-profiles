@@ -1,6 +1,8 @@
 # NestJS
 
-Perfil para desenvolvimento de APIs e servicos com NestJS no VS Code, combinando TypeScript, ESLint, Prettier e a convencao de imports relativos gerada pelo Nest CLI.
+Perfil para desenvolvimento de APIs e servicos com NestJS no VS Code, com TypeScript, debug e imports relativos conforme a convencao do Nest CLI.
+
+Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab manual com quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
 
 ## Indicado Para
 
@@ -16,10 +18,6 @@ Perfil para desenvolvimento de APIs e servicos com NestJS no VS Code, combinando
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
-- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
-- `dbaeumer.vscode-eslint` - lint para TypeScript e JavaScript.
-- `esbenp.prettier-vscode` - formatacao com Prettier.
-- `editorconfig.editorconfig` - respeito ao `.editorconfig` do projeto.
 
 O VS Code ja inclui suporte nativo forte a TypeScript, npm scripts e debug de Node. Por isso, o perfil nao instala packs de snippets de terceiros para NestJS, que tendem a ficar desatualizados em relacao as versoes novas do framework.
 
@@ -40,28 +38,25 @@ Para APIs Nest, `humao.rest-client` e a escolha mais leve quando os requests dev
 
 ```json
 {
+  "editor.autoIndent": "none",
+  "editor.detectIndentation": false,
+  "editor.autoIndentOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll": "never",
+    "source.organizeImports": "never"
   },
-  "eslint.validate": [
-    "typescript",
-    "javascript",
-    "typescriptreact",
-    "javascriptreact"
-  ],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.importModuleSpecifier": "relative",
   "javascript.preferences.importModuleSpecifier": "relative",
-  "debug.javascript.autoAttachFilter": "smart",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "debug.javascript.autoAttachFilter": "smart"
 }
 ```
+
+O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
 
 O `importModuleSpecifier` em `relative` segue a convencao do Nest CLI, que gera imports relativos nos modulos, controllers e services. Se o projeto usar paths absolutos via `tsconfig.json`, ajuste para `shortest` ou `non-relative`.
 
@@ -70,5 +65,5 @@ O `importModuleSpecifier` em `relative` segue a convencao do Nest CLI, que gera 
 - Node.js instalado.
 - Nest CLI (`@nestjs/cli`) para gerar projetos, modulos, controllers e services.
 - Um gerenciador de pacotes, como `npm`, `pnpm` ou `yarn`.
-- ESLint e Prettier instalados no projeto para alinhar editor, terminal e CI.
+- ESLint e Prettier sao opcionais no projeto para uso pelo terminal ou CI; o perfil nao inclui suas extensoes.
 - Jest (padrao do Nest CLI) configurado no projeto para execucao de testes.

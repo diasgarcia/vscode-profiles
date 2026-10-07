@@ -2,6 +2,8 @@
 
 Perfil para desenvolvimento em Assembly Intel 64 (x86-64) no VS Code, com syntax highlighting dedicado, debug visual com GDB e editor hexadecimal para inspeção binária.
 
+Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab manual com quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
+
 ## Indicado Para
 
 - Estudos de Assembly, engenharia reversa e análise de binários.
@@ -17,7 +19,6 @@ Perfil para desenvolvimento em Assembly Intel 64 (x86-64) no VS Code, com syntax
 - `cweijan.vscode-office` – visualização de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` – abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` – abre projetos em dev containers com Docker.
-- `tinkertrain.theme-panda` – tema de cores Panda Syntax.
 - `13xforever.language-x86-64-assembly` – syntax highlighting, snippets e suporte à linguagem Assembly Intel x86-64.
 - `webfreak.debug` – debug visual com GDB/LLDB diretamente no VS Code.
 - `ms-vscode.hexeditor` – editor hexadecimal oficial da Microsoft para inspeção e edição de arquivos binários.
@@ -46,7 +47,7 @@ Ferramentas usadas:
 
 ## Configuração `.vscode/`
 
-Este perfil também pode incluir uma configuração de projeto em `.vscode/` para compilar e depurar o arquivo Assembly aberto no momento.
+Os arquivos `.code-profile` não criam configurações de projeto em `.vscode/`. Para compilar e depurar o arquivo Assembly aberto no momento, crie essa pasta no seu projeto e copie os exemplos de `launch.json`, `tasks.json` e `settings.json` abaixo.
 
 Estrutura esperada:
 
@@ -135,6 +136,12 @@ ld build/arquivo.o -o build/arquivo
     "*.S": "asm-intel-x86-generic"
   },
   "[asm-intel-x86-generic]": {
+    "editor.autoIndent": "none",
+    "editor.autoIndentOnPaste": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "never",
+      "source.organizeImports": "never"
+    },
     "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
     "editor.formatOnType": false,
@@ -144,6 +151,8 @@ ld build/arquivo.o -o build/arquivo
   }
 }
 ```
+
+O perfil desativa a indentação e a formatação automáticas. O exemplo de workspace acima usa quatro espaços para Tab, como a base compartilhada dos perfis.
 
 O identificador `asm-intel-x86-generic` é usado pela extensão `13xforever.language-x86-64-assembly` para syntax highlighting.
 
@@ -376,7 +385,7 @@ desktop.ini
 
 A pasta `.vscode/` não precisa ser ignorada neste tipo de projeto, porque ela contém a configuração compartilhável de build e debug.
 
-## Extensões de Arquivo Suportadas
+## Extensões de Arquivo Comuns
 
 | Extensão | Descrição |
 |---|---|

@@ -2,6 +2,8 @@
 
 Perfil para desenvolvimento de APIs e servicos Spring Boot no VS Code, combinando a base Java com ferramentas especificas de Spring.
 
+Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab manual com quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
+
 ## Indicado Para
 
 - APIs REST em Spring Boot.
@@ -16,10 +18,9 @@ Perfil para desenvolvimento de APIs e servicos Spring Boot no VS Code, combinand
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
-- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
 - `vscjava.vscode-java-pack` - base Java.
 - `vscjava.vscode-java-dependency` - Project Manager for Java.
-- `redhat.java` - linguagem Java, IntelliSense, navegacao e formatacao.
+- `redhat.java` - linguagem Java, IntelliSense e navegacao; formatacao desativada neste perfil.
 - `vscjava.vscode-java-debug` - debug de aplicacoes Java.
 - `vscjava.vscode-java-test` - execucao e exploracao de testes.
 - `vscjava.vscode-maven` - suporte a projetos Maven.
@@ -45,19 +46,27 @@ Para APIs, a recomendacao padrao e documentar requests com `humao.rest-client` q
 
 ```json
 {
+  "editor.autoIndent": "none",
+  "editor.detectIndentation": false,
+  "editor.autoIndentOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.organizeImports": "never"
+  },
   "java.configuration.updateBuildConfiguration": "interactive",
   "java.compile.nullAnalysis.mode": "automatic",
-  "java.saveActions.organizeImports": true,
+  "java.saveActions.organizeImports": false,
   "spring-boot.ls.problem.application-properties.enabled": true,
-  "yaml.format.enable": true,
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  }
+  "yaml.format.enable": false,
+  "java.format.enabled": false,
+  "java.format.onType.enabled": false
 }
 ```
+
+O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
 
 ## Ferramentas Externas
 

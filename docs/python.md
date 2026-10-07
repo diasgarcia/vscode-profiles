@@ -1,6 +1,8 @@
 # Python
 
-Perfil para desenvolvimento Python moderno no VS Code, com foco em autocomplete, type checking basico, debug e padronizacao de lint/formatacao com Ruff.
+Perfil para desenvolvimento Python moderno no VS Code, com foco em autocomplete, type checking basico e debug.
+
+Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab manual com quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
 
 ## Indicado Para
 
@@ -16,11 +18,9 @@ Perfil para desenvolvimento Python moderno no VS Code, com foco em autocomplete,
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
-- `tinkertrain.theme-panda` - tema de cores Panda Syntax.
 - `ms-python.python` - suporte oficial a Python.
 - `ms-python.vscode-pylance` - IntelliSense e type checking com Pyright/Pylance.
 - `ms-python.debugpy` - debug de codigo Python.
-- `charliermarsh.ruff` - lint, formatacao e organizacao de imports.
 
 ## Extensoes Opcionais
 
@@ -31,21 +31,26 @@ Perfil para desenvolvimento Python moderno no VS Code, com foco em autocomplete,
 
 ```json
 {
+  "editor.autoIndent": "none",
+  "editor.detectIndentation": false,
+  "editor.autoIndentOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.organizeImports": "never"
+  },
   "python.analysis.typeCheckingMode": "basic",
-  "python.analysis.autoImportCompletions": true,
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.ruff": "explicit",
-      "source.organizeImports.ruff": "explicit"
-    }
-  }
+  "python.analysis.autoImportCompletions": true
 }
 ```
+
+O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
 
 ## Ferramentas Externas
 
 - Python instalado na maquina.
 - Um gerenciador de ambiente, como `venv`, `pyenv`, `conda`, `poetry` ou equivalente.
-- Ruff pode ser instalado no projeto para alinhar VS Code, terminal e CI.
+- Ruff e opcional no projeto para lint/formatacao pelo terminal ou CI; sua extensao nao esta incluida no perfil.
 - Opcionalmente, Jupyter instalado no ambiente quando o projeto usar notebooks.
