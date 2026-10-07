@@ -53,5 +53,7 @@
     "github.copilot.enable": {
         "*": false
     },
-    "github.copilot.nextEditSuggestions.enabled": false
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "containers.composeDetached": true,
+    "containers.composeBuild": true
 }

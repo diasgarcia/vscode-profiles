@@ -19,6 +19,7 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - permite abrir pastas, terminal, debug e extensoes dentro do ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
+- `ms-azuretools.vscode-containers` - Container Tools: gerencia containers, imagens, logs e servicos Docker Compose.
 - `ms-vscode.cpptools` - suporte oficial da Microsoft para C/C++, IntelliSense, navegacao e debug; formatacao desativada neste perfil.
 
 A combinacao de `ms-vscode-remote.remote-wsl` e `ms-vscode.cpptools` permite manter o VS Code no Windows e executar o projeto e a toolchain de C no Linux do WSL.

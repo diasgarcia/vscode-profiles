@@ -18,6 +18,7 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
+- `ms-azuretools.vscode-containers` - Container Tools: gerencia containers, imagens, logs e servicos Docker Compose.
 - `yoavbls.pretty-ts-errors` - leitura mais clara de erros TypeScript.
 
 O VS Code ja inclui suporte nativo forte a JavaScript, TypeScript, npm scripts e debug de Node. Por isso, o perfil nao instala extensoes extras para funcionalidades que ja existem no editor.
@@ -31,7 +32,6 @@ O VS Code ja inclui suporte nativo forte a JavaScript, TypeScript, npm scripts e
 - `Prisma.prisma` - suporte a schema Prisma.
 - `bradlc.vscode-tailwindcss` - util quando o projeto usa Tailwind CSS.
 - `redhat.vscode-yaml` - util para projetos com muitos arquivos YAML.
-- `ms-azuretools.vscode-containers` - suporte a containers quando o projeto usa Docker/Compose.
 - `humao.rest-client` - bom para versionar requests em arquivos `.http`.
 - `rangav.vscode-thunder-client` - alternativa com UI para testar APIs sem sair do VS Code.
 

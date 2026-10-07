@@ -19,6 +19,7 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 - `cweijan.vscode-office` – visualização de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` – abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` – abre projetos em dev containers com Docker.
+- `ms-azuretools.vscode-containers` - Container Tools: gerencia containers, imagens, logs e servicos Docker Compose.
 - `13xforever.language-x86-64-assembly` – syntax highlighting, snippets e suporte à linguagem Assembly Intel x86-64.
 - `webfreak.debug` – debug visual com GDB/LLDB diretamente no VS Code.
 - `ms-vscode.hexeditor` – editor hexadecimal oficial da Microsoft para inspeção e edição de arquivos binários.

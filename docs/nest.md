@@ -18,6 +18,7 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
+- `ms-azuretools.vscode-containers` - Container Tools: gerencia containers, imagens, logs e servicos Docker Compose.
 
 O VS Code ja inclui suporte nativo forte a TypeScript, npm scripts e debug de Node. Por isso, o perfil nao instala packs de snippets de terceiros para NestJS, que tendem a ficar desatualizados em relacao as versoes novas do framework.
 
@@ -29,7 +30,6 @@ O VS Code ja inclui suporte nativo forte a TypeScript, npm scripts e debug de No
 - `yoavbls.pretty-ts-errors` - leitura mais clara de erros TypeScript.
 - `humao.rest-client` - bom para versionar requests em arquivos `.http`.
 - `rangav.vscode-thunder-client` - alternativa com UI para testar APIs sem sair do VS Code.
-- `ms-azuretools.vscode-containers` - suporte a containers quando o projeto usa Docker/Compose.
 - `redhat.vscode-yaml` - util para projetos com muitos arquivos YAML, como docker-compose e pipelines.
 
 Para APIs Nest, `humao.rest-client` e a escolha mais leve quando os requests devem ficar no repositorio. `rangav.vscode-thunder-client` faz mais sentido quando a equipe prefere uma interface visual.

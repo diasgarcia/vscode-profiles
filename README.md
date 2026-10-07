@@ -27,6 +27,7 @@ Todos os perfis incluem como base:
 - `cweijan.vscode-office`
 - `ms-vscode-remote.remote-wsl`
 - `ms-vscode-remote.remote-containers`
+- `ms-azuretools.vscode-containers`
 
 Todos os perfis incluem as configuracoes do [settings.json](settings.json), com o mesmo visual e comportamento de edicao. As configuracoes especificas de cada stack sao adicionadas a essa base. Entre os ajustes compartilhados estao:
 
@@ -39,6 +40,7 @@ Todos os perfis incluem as configuracoes do [settings.json](settings.json), com 
 - `chat.titleBar.signIn.enabled: false`
 - `github.copilot.enable`: `{ "*": false }` para desativar sugestoes inline
 - `github.copilot.nextEditSuggestions.enabled: false`
+- `containers.composeDetached: true` e `containers.composeBuild: true`
 - `editor.fontSize: 16`
 - `editor.tabSize: 4` em todos os perfis, incluindo Assembly e NestJS
 - `editor.insertSpaces: true`
@@ -90,6 +92,7 @@ O arquivo configura:
 - **Tema de cores:** seleciona o tema nativo `Dark 2026`, sem extensao adicional.
 - **Icones:** seleciona o tema `Flow Deep` (`flow-deep`). A extensao `thang-nm.flow-icons` precisa estar instalada e habilitada no perfil ativo.
 - **Chat e telemetria:** mantem o Chat com estrelinha e todos os controles de layout visiveis. Desativa o modo agente, as sugestoes inline e de proxima edicao do Copilot, o acesso a servidores MCP pelo chat e a telemetria do VS Code. Oculta os botoes `Open in Agents` e de login do Copilot na barra de titulo.
+- **Docker Compose:** `containers.composeDetached` e `containers.composeBuild` fazem o Compose Up usar `-d` e `--build`, respectivamente. A extensao Container Tools esta incluida em todos os perfis.
 - **Zen Mode:** ao ativar esse modo, evita entrar em tela cheia e centralizar o layout. Essas opcoes nao ativam o Zen Mode automaticamente.
 
 ### Como Aplicar Manualmente a um Perfil Existente
@@ -110,6 +113,24 @@ O Chat fica visivel porque `chat.disableAIFeatures` esta como `false`; usar `tru
 O arquivo desativa a indentacao e a formatacao automaticas e as acoes de correcao/organizacao de imports ao salvar. Ele nao instala ou remove extensoes. Os `.code-profile` contem uma copia dessa base: alterar `settings.json` futuramente exige atualizar os perfis tambem, pois nao ha geracao automatica. Para usar os perfis revisados em uma instalacao existente, importe-os novamente; editar os arquivos deste repositorio nao desinstala extensoes do VS Code.
 
 Para desfazer o teste, restaure a copia das configuracoes anteriores. Mais detalhes na documentacao oficial de [configuracoes do VS Code](https://code.visualstudio.com/docs/configure/settings) e [repositorios Git](https://code.visualstudio.com/docs/sourcecontrol/repos-remotes).
+
+## Containers e Docker Compose
+
+Todos os perfis incluem duas extensoes complementares:
+
+- **Dev Containers** (`ms-vscode-remote.remote-containers`): abre o projeto dentro de um ambiente de desenvolvimento em container.
+- **Container Tools** (`ms-azuretools.vscode-containers`): gerencia containers, imagens, logs e servicos Docker Compose pelo VS Code.
+
+Para executar comandos de Compose, Docker e o plugin Docker Compose precisam estar instalados e o daemon do Docker deve estar em execucao no ambiente usado pelo VS Code. A extensao nao instala nem inicia o Docker por conta propria.
+
+Para subir um servico, como `rocket-api`:
+
+1. Abra a pasta do projeto que contem `compose.yaml` ou `docker-compose.yml`.
+2. Clique com o botao direito no arquivo e escolha `Compose Up - Select Services`.
+3. Selecione o servico desejado. A base dos perfis configura `-d` e `--build`.
+4. Use o painel Containers para acompanhar logs e iniciar ou parar containers. Para descer apenas os servicos escolhidos, use `Compose Down - Select Services`.
+
+O nome `rocket-api` e apenas um exemplo; os perfis nao fixam nenhum servico ou arquivo Compose. Mais detalhes na [documentacao de containers](https://code.visualstudio.com/docs/containers/overview) e na [referencia das opcoes de Compose](https://code.visualstudio.com/docs/containers/reference#docker-compose-up).
 
 ## Documentacao
 

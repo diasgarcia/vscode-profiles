@@ -18,6 +18,7 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
+- `ms-azuretools.vscode-containers` - Container Tools: gerencia containers, imagens, logs e servicos Docker Compose.
 - `vscjava.vscode-java-pack` - base Java.
 - `vscjava.vscode-java-dependency` - Project Manager for Java.
 - `redhat.java` - linguagem Java, IntelliSense e navegacao; formatacao desativada neste perfil.
@@ -36,7 +37,6 @@ As extensoes Java aparecem explicitamente mesmo quando tambem sao cobertas pelo 
 
 - `humao.rest-client` - bom para versionar requests em arquivos `.http`.
 - `rangav.vscode-thunder-client` - alternativa com UI para testar APIs sem sair do VS Code.
-- `ms-azuretools.vscode-containers` - suporte a containers quando o projeto usa Docker/Compose.
 - `SonarSource.sonarlint-vscode` - SonarQube for IDE, antigo SonarLint, para analise de qualidade e seguranca.
 - `vscjava.vscode-lombok` - acoes auxiliares para projetos que usam Lombok.
 

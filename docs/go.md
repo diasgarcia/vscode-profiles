@@ -18,6 +18,7 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 - `cweijan.vscode-office` - visualizacao de documentos Office (Word, Excel e PDF) direto no editor.
 - `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
+- `ms-azuretools.vscode-containers` - Container Tools: gerencia containers, imagens, logs e servicos Docker Compose.
 - `golang.go` - extensao oficial de Go, mantida pelo Go Team at Google, com suporte a linguagem, `gopls`, debug, testes e ferramentas da stack Go; formatacao automatica desativada neste perfil.
 
 A extensao oficial cobre o que normalmente seria dividido em varias extensoes: IntelliSense, navegacao, diagnosticos, testes, debug com Delve e integracao com ferramentas como `gofmt`, `goimports` e `gopls`.
@@ -25,7 +26,6 @@ A extensao oficial cobre o que normalmente seria dividido em varias extensoes: I
 ## Extensoes Opcionais
 
 - `redhat.vscode-yaml` - util para projetos com muitos arquivos YAML, como manifests, pipelines e configuracoes de deploy.
-- `ms-azuretools.vscode-containers` - suporte a containers quando o projeto usa Docker/Compose.
 - `humao.rest-client` - bom para versionar requests em arquivos `.http`.
 - `rangav.vscode-thunder-client` - alternativa com UI para testar APIs sem sair do VS Code.
 
