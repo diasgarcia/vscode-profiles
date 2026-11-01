@@ -42,7 +42,7 @@ Todos os perfis incluem as configuracoes do [settings.json](settings.json), com 
 - `github.copilot.nextEditSuggestions.enabled: false`
 - `containers.composeDetached: true` e `containers.composeBuild: true`
 - `editor.fontSize: 16`
-- `editor.tabSize: 4` em todos os perfis, incluindo Assembly e NestJS
+- `editor.tabSize: 4` como base; JavaScript, TypeScript, JSX e TSX usam dois espacos por configuracoes especificas de linguagem
 - `editor.insertSpaces: true`
 - `editor.cursorStyle: line` e `editor.cursorBlinking: blink`
 - `editor.fontLigatures: true` e `editor.lineHeight: 1.2`
@@ -65,7 +65,7 @@ Todos os perfis incluem as configuracoes do [settings.json](settings.json), com 
 - `files.insertFinalNewline: true`
 - `files.trimTrailingWhitespace: true`
 
-Os perfis nao incluem Prettier, EditorConfig, ESLint ou Ruff. As extensoes de linguagem de C/C++, Go, Java e YAML continuam presentes para autocomplete, navegacao, diagnosticos e debug quando disponiveis, com indentacao automatica e formatacao ao digitar quando a linguagem oferece suporte. Enter dentro de blocos acompanha a indentacao da linguagem, com quatro espacos nos perfis. A formatacao ao salvar e colar permanece desativada. A limpeza de espacos no fim das linhas e a insercao de uma quebra de linha final continuam habilitadas.
+Os perfis nao incluem Prettier, EditorConfig, ESLint ou Ruff. As extensoes de linguagem de C/C++, Go, Java e YAML continuam presentes para autocomplete, navegacao, diagnosticos e debug quando disponiveis, com indentacao automatica e formatacao ao digitar quando a linguagem oferece suporte. Enter dentro de blocos acompanha a indentacao da linguagem: dois espacos em JavaScript, TypeScript, JSX e TSX e quatro nas demais, incluindo Java e Python. A formatacao ao salvar e colar permanece desativada. A limpeza de espacos no fim das linhas e a insercao de uma quebra de linha final continuam habilitadas.
 
 `dev.containers.mountWaylandSocket` tem escopo de aplicacao: no VS Code instalado, configure essa chave como `false` nas configuracoes de usuario gerais para valer em todos os perfis. Isso evita a dependencia de um socket grafico do Debian/WSL ao usar Docker Desktop.
 
@@ -87,7 +87,7 @@ O [settings.json](settings.json) na raiz do repositorio e a referencia legivel d
 
 O arquivo configura:
 
-- **Editor:** fonte de tamanho 16, ligaturas, altura de linha de 1.2, cursor fino e piscando, Tab com quatro espacos e minimapa oculto. Habilita a indentacao automatica e a formatacao ao digitar, mantendo a formatacao ao salvar e colar desativada; oculta breadcrumbs e o destaque da linha atual. As barras de rolagem aparecem quando necessario, com o indicador de cinco pixels; `horizontalSliderSize` e `verticalSliderSize` sao opcoes internas e podem aparecer como desconhecidas no editor de settings.
+- **Editor:** fonte de tamanho 16, ligaturas, altura de linha de 1.2, cursor fino e piscando, Tab com dois espacos em JavaScript/TypeScript (incluindo JSX/TSX), quatro nas demais linguagens e minimapa oculto. Habilita a indentacao automatica e a formatacao ao digitar, mantendo a formatacao ao salvar e colar desativada; oculta breadcrumbs e o destaque da linha atual. As barras de rolagem aparecem quando necessario, com o indicador de cinco pixels; `horizontalSliderSize` e `verticalSliderSize` sao opcoes internas e podem aparecer como desconhecidas no editor de settings.
 - **Interface:** zoom de 0.3, barra lateral principal a direita, barra de atividades embaixo e barra de status oculta. Os botoes de layout continuam visiveis; o Command Center e os controles de navegacao ficam ocultos.
 - **Git:** a secao `Repositories` fica sempre disponivel no painel de Source Control. O nome da branch nesse painel continua clicavel mesmo com a barra de status escondida.
 - **Edicao e abas:** `editor.linkedEditing` sincroniza edicoes relacionadas, como tags HTML de abertura e fechamento; `workbench.editor.revealIfOpen` leva para a aba existente ao abrir um arquivo que ja esta aberto.

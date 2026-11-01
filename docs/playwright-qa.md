@@ -2,7 +2,7 @@
 
 Perfil para automacao de testes com Playwright, JavaScript e TypeScript, com execucao, debug e inspecao de testes.
 
-Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab manual com quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
+Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab com dois espacos em JavaScript, TypeScript, JSX e TSX; as demais linguagens mantem quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
 
 ## Indicado Para
 
@@ -48,7 +48,7 @@ Para suites de QA, `humao.rest-client` e a escolha mais leve quando os requests 
 }
 ```
 
-O perfil habilita a indentacao automatica e a formatacao ao digitar, quando a linguagem oferece esse suporte. Enter dentro de blocos usa a indentacao da linguagem. A formatacao ao salvar e colar e as acoes de correcao/organizacao de imports ao salvar continuam desativadas; Ctrl+S nao executa o formatador.
+O perfil habilita a indentacao automatica e a formatacao ao digitar, quando a linguagem oferece esse suporte. Enter dentro de blocos usa dois espacos em JavaScript, TypeScript, JSX e TSX. A formatacao ao salvar e colar e as acoes de correcao/organizacao de imports ao salvar continuam desativadas; Ctrl+S nao executa o formatador.
 
 ## Ferramentas Externas
 
