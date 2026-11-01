@@ -137,7 +137,7 @@ ld build/arquivo.o -o build/arquivo
     "*.S": "asm-intel-x86-generic"
   },
   "[asm-intel-x86-generic]": {
-    "editor.autoIndent": "none",
+    "editor.autoIndent": "full",
     "editor.autoIndentOnPaste": false,
     "editor.codeActionsOnSave": {
       "source.fixAll": "never",
@@ -145,7 +145,7 @@ ld build/arquivo.o -o build/arquivo
     },
     "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
-    "editor.formatOnType": false,
+    "editor.formatOnType": true,
     "editor.detectIndentation": false,
     "editor.insertSpaces": true,
     "editor.tabSize": 4
@@ -153,7 +153,7 @@ ld build/arquivo.o -o build/arquivo
 }
 ```
 
-O perfil desativa a indentação e a formatação automáticas. O exemplo de workspace acima usa quatro espaços para Tab, como a base compartilhada dos perfis.
+O perfil habilita a indentação automática e a formatação ao digitar quando a linguagem oferece suporte. A formatação ao salvar e colar continua desativada. O exemplo de workspace acima usa quatro espaços para Tab, como a base compartilhada dos perfis.
 
 O identificador `asm-intel-x86-generic` é usado pela extensão `13xforever.language-x86-64-assembly` para syntax highlighting.
 

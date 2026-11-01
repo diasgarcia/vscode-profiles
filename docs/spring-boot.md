@@ -21,7 +21,7 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 - `ms-azuretools.vscode-containers` - Container Tools: gerencia containers, imagens, logs e servicos Docker Compose.
 - `vscjava.vscode-java-pack` - base Java.
 - `vscjava.vscode-java-dependency` - Project Manager for Java.
-- `redhat.java` - linguagem Java, IntelliSense e navegacao; formatacao desativada neste perfil.
+- `redhat.java` - linguagem Java, IntelliSense e navegacao; formatacao habilitada durante a edicao e desativada ao salvar.
 - `vscjava.vscode-java-debug` - debug de aplicacoes Java.
 - `vscjava.vscode-java-test` - execucao e exploracao de testes.
 - `vscjava.vscode-maven` - suporte a projetos Maven.
@@ -46,12 +46,12 @@ Para APIs, a recomendacao padrao e documentar requests com `humao.rest-client` q
 
 ```json
 {
-  "editor.autoIndent": "none",
+  "editor.autoIndent": "full",
   "editor.detectIndentation": false,
   "editor.autoIndentOnPaste": false,
   "editor.formatOnSave": false,
   "editor.formatOnPaste": false,
-  "editor.formatOnType": false,
+  "editor.formatOnType": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.organizeImports": "never"
@@ -60,13 +60,13 @@ Para APIs, a recomendacao padrao e documentar requests com `humao.rest-client` q
   "java.compile.nullAnalysis.mode": "automatic",
   "java.saveActions.organizeImports": false,
   "spring-boot.ls.problem.application-properties.enabled": true,
-  "yaml.format.enable": false,
-  "java.format.enabled": false,
-  "java.format.onType.enabled": false
+  "yaml.format.enable": true,
+  "java.format.enabled": true,
+  "java.format.onType.enabled": true
 }
 ```
 
-O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
+O perfil habilita a indentacao automatica e a formatacao ao digitar, quando a linguagem oferece esse suporte. Enter dentro de blocos usa a indentacao da linguagem. A formatacao ao salvar e colar e as acoes de correcao/organizacao de imports ao salvar continuam desativadas; Ctrl+S nao executa o formatador.
 
 ## Ferramentas Externas
 

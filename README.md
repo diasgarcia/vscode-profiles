@@ -42,7 +42,7 @@ Todos os perfis incluem as configuracoes do [settings.json](settings.json), com 
 - `github.copilot.nextEditSuggestions.enabled: false`
 - `containers.composeDetached: true` e `containers.composeBuild: true`
 - `editor.fontSize: 16`
-- `editor.tabSize: 4` em todos os perfis, incluindo Assembly e NestJS
+- `editor.tabSize: 4` como base; JavaScript, TypeScript, JSX e TSX usam dois espacos por configuracoes especificas de linguagem
 - `editor.insertSpaces: true`
 - `editor.cursorStyle: line` e `editor.cursorBlinking: blink`
 - `editor.fontLigatures: true` e `editor.lineHeight: 1.2`
@@ -54,17 +54,20 @@ Todos os perfis incluem as configuracoes do [settings.json](settings.json), com 
 - telemetria desativada
 - `editor.matchBrackets: near`
 - `files.encoding: utf8`
-- `editor.autoIndent: none`
+- `editor.autoIndent: full`
 - `editor.detectIndentation: false`
 - `editor.autoIndentOnPaste: false`
 - `editor.formatOnSave: false`
 - `editor.formatOnPaste: false`
-- `editor.formatOnType: false`
+- `editor.formatOnType: true`
+- `dev.containers.mountWaylandSocket: false` para evitar a montagem grafica automatica do WSL
 - `editor.codeActionsOnSave`: `source.fixAll` e `source.organizeImports` como `never`
 - `files.insertFinalNewline: true`
 - `files.trimTrailingWhitespace: true`
 
-Os perfis nao incluem Prettier, EditorConfig, ESLint ou Ruff. As extensoes de linguagem de C/C++, Go, Java e YAML continuam presentes para autocomplete, navegacao, diagnosticos e debug quando disponiveis, com a formatacao automatica desativada. Tab e espacos continuam funcionando para indentacao manual, com quatro espacos em todos os perfis. A limpeza de espacos no fim das linhas e a insercao de uma quebra de linha final continuam habilitadas.
+Os perfis nao incluem Prettier, EditorConfig, ESLint ou Ruff. As extensoes de linguagem de C/C++, Go, Java e YAML continuam presentes para autocomplete, navegacao, diagnosticos e debug quando disponiveis, com indentacao automatica e formatacao ao digitar quando a linguagem oferece suporte. Enter dentro de blocos acompanha a indentacao da linguagem: dois espacos em JavaScript, TypeScript, JSX e TSX e quatro nas demais, incluindo Java e Python. A formatacao ao salvar e colar permanece desativada. A limpeza de espacos no fim das linhas e a insercao de uma quebra de linha final continuam habilitadas.
+
+`dev.containers.mountWaylandSocket` tem escopo de aplicacao: no VS Code instalado, configure essa chave como `false` nas configuracoes de usuario gerais para valer em todos os perfis. Isso evita a dependencia de um socket grafico do Debian/WSL ao usar Docker Desktop.
 
 Os arquivos seguem o formato exportado pelo VS Code: `name`, `settings`, `extensions` e `globalState`. O campo `globalState` fica presente apenas por compatibilidade, com `storage` vazio.
 
@@ -84,7 +87,7 @@ O [settings.json](settings.json) na raiz do repositorio e a referencia legivel d
 
 O arquivo configura:
 
-- **Editor:** fonte de tamanho 16, ligaturas, altura de linha de 1.2, cursor fino e piscando, Tab manual com quatro espacos e minimapa oculto. Desativa a indentacao e a formatacao automaticas, oculta breadcrumbs e o destaque da linha atual. As barras de rolagem aparecem quando necessario, com o indicador de cinco pixels; `horizontalSliderSize` e `verticalSliderSize` sao opcoes internas e podem aparecer como desconhecidas no editor de settings.
+- **Editor:** fonte de tamanho 16, ligaturas, altura de linha de 1.2, cursor fino e piscando, Tab com dois espacos em JavaScript/TypeScript (incluindo JSX/TSX), quatro nas demais linguagens e minimapa oculto. Habilita a indentacao automatica e a formatacao ao digitar, mantendo a formatacao ao salvar e colar desativada; oculta breadcrumbs e o destaque da linha atual. As barras de rolagem aparecem quando necessario, com o indicador de cinco pixels; `horizontalSliderSize` e `verticalSliderSize` sao opcoes internas e podem aparecer como desconhecidas no editor de settings.
 - **Interface:** zoom de 0.3, barra lateral principal a direita, barra de atividades embaixo e barra de status oculta. Os botoes de layout continuam visiveis; o Command Center e os controles de navegacao ficam ocultos.
 - **Git:** a secao `Repositories` fica sempre disponivel no painel de Source Control. O nome da branch nesse painel continua clicavel mesmo com a barra de status escondida.
 - **Edicao e abas:** `editor.linkedEditing` sincroniza edicoes relacionadas, como tags HTML de abertura e fechamento; `workbench.editor.revealIfOpen` leva para a aba existente ao abrir um arquivo que ja esta aberto.
@@ -110,7 +113,7 @@ Os dez perfis ja incluem essas preferencias. Configuracoes do workspace e blocos
 
 O Chat fica visivel porque `chat.disableAIFeatures` esta como `false`; usar `true` oculta tambem esse botao. Para manter o Chat e ocultar Agents, deixe `chat.agent.enabled`, `chat.titleBar.openInAgentsWindow.enabled` e `chat.titleBar.signIn.enabled` como `false`. As sugestoes automaticas sao desativadas separadamente por `github.copilot.enable` e `github.copilot.nextEditSuggestions.enabled`. Se um perfil instalado mostrar um comportamento diferente, confira os User Settings do perfil e os ajustes do workspace, depois execute `Developer: Reload Window`. Veja a [referencia oficial das configuracoes de IA](https://code.visualstudio.com/docs/agents/reference/ai-settings).
 
-O arquivo desativa a indentacao e a formatacao automaticas e as acoes de correcao/organizacao de imports ao salvar. Ele nao instala ou remove extensoes. Os `.code-profile` contem uma copia dessa base: alterar `settings.json` futuramente exige atualizar os perfis tambem, pois nao ha geracao automatica. Para usar os perfis revisados em uma instalacao existente, importe-os novamente; editar os arquivos deste repositorio nao desinstala extensoes do VS Code.
+O arquivo habilita a indentacao automatica e a formatacao ao digitar, sem formatar o arquivo nem executar acoes de correcao/organizacao de imports ao salvar. Ele nao instala ou remove extensoes. Os `.code-profile` contem uma copia dessa base: alterar `settings.json` futuramente exige atualizar os perfis tambem, pois nao ha geracao automatica. Para usar os perfis revisados em uma instalacao existente, importe-os novamente; editar os arquivos deste repositorio nao desinstala extensoes do VS Code.
 
 Para desfazer o teste, restaure a copia das configuracoes anteriores. Mais detalhes na documentacao oficial de [configuracoes do VS Code](https://code.visualstudio.com/docs/configure/settings) e [repositorios Git](https://code.visualstudio.com/docs/sourcecontrol/repos-remotes).
 

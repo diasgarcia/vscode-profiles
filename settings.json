@@ -36,12 +36,12 @@
     "zenMode.fullScreen": false,
     "zenMode.centerLayout": false,
     "workbench.iconTheme": "flow-deep",
-    "editor.autoIndent": "none",
+    "editor.autoIndent": "full",
     "editor.detectIndentation": false,
     "editor.autoIndentOnPaste": false,
     "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
-    "editor.formatOnType": false,
+    "editor.formatOnType": true,
     "editor.codeActionsOnSave": {
         "source.fixAll": "never",
         "source.organizeImports": "never"
@@ -55,5 +55,26 @@
     },
     "github.copilot.nextEditSuggestions.enabled": false,
     "containers.composeDetached": true,
-    "containers.composeBuild": true
+    "containers.composeBuild": true,
+    "dev.containers.mountWaylandSocket": false,
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    },
+    "[javascriptreact]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    },
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    }
 }

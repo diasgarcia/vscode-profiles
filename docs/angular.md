@@ -1,8 +1,8 @@
 # Angular
 
-Perfil para desenvolvimento Angular com TypeScript e suporte a templates, sem indentacao ou formatacao automatica.
+Perfil para desenvolvimento Angular com TypeScript e suporte a templates, com indentacao automatica e formatacao ao digitar, sem formatacao ao salvar.
 
-Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab manual com quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
+Este perfil inclui a base compartilhada do [settings.json](../settings.json): tema nativo Dark 2026, icones Flow Deep, cursor fino, barras de rolagem discretas, painel lateral a direita e Tab com dois espacos em JavaScript, TypeScript, JSX e TSX; as demais linguagens mantem quatro espacos. Veja o [README](../README.md#base-compartilhada-settingsjson) para os demais ajustes comuns.
 
 ## Indicado Para
 
@@ -30,12 +30,12 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 
 ```json
 {
-  "editor.autoIndent": "none",
+  "editor.autoIndent": "full",
   "editor.detectIndentation": false,
   "editor.autoIndentOnPaste": false,
   "editor.formatOnSave": false,
   "editor.formatOnPaste": false,
-  "editor.formatOnType": false,
+  "editor.formatOnType": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.organizeImports": "never"
@@ -45,7 +45,7 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 }
 ```
 
-O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
+O perfil habilita a indentacao automatica e a formatacao ao digitar, quando a linguagem oferece esse suporte. Enter dentro de blocos usa dois espacos em JavaScript, TypeScript, JSX e TSX. A formatacao ao salvar e colar e as acoes de correcao/organizacao de imports ao salvar continuam desativadas; Ctrl+S nao executa o formatador.
 
 ## Ferramentas Externas
 
