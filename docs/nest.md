@@ -38,12 +38,12 @@ Para APIs Nest, `humao.rest-client` e a escolha mais leve quando os requests dev
 
 ```json
 {
-  "editor.autoIndent": "none",
+  "editor.autoIndent": "full",
   "editor.detectIndentation": false,
   "editor.autoIndentOnPaste": false,
   "editor.formatOnSave": false,
   "editor.formatOnPaste": false,
-  "editor.formatOnType": false,
+  "editor.formatOnType": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.organizeImports": "never"
@@ -56,7 +56,7 @@ Para APIs Nest, `humao.rest-client` e a escolha mais leve quando os requests dev
 }
 ```
 
-O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
+O perfil habilita a indentacao automatica e a formatacao ao digitar, quando a linguagem oferece esse suporte. Enter dentro de blocos usa a indentacao da linguagem. A formatacao ao salvar e colar e as acoes de correcao/organizacao de imports ao salvar continuam desativadas; Ctrl+S nao executa o formatador.
 
 O `importModuleSpecifier` em `relative` segue a convencao do Nest CLI, que gera imports relativos nos modulos, controllers e services. Se o projeto usar paths absolutos via `tsconfig.json`, ajuste para `shortest` ou `non-relative`.
 

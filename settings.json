@@ -36,12 +36,12 @@
     "zenMode.fullScreen": false,
     "zenMode.centerLayout": false,
     "workbench.iconTheme": "flow-deep",
-    "editor.autoIndent": "none",
+    "editor.autoIndent": "full",
     "editor.detectIndentation": false,
     "editor.autoIndentOnPaste": false,
     "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
-    "editor.formatOnType": false,
+    "editor.formatOnType": true,
     "editor.codeActionsOnSave": {
         "source.fixAll": "never",
         "source.organizeImports": "never"

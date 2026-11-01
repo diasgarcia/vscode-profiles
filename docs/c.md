@@ -20,7 +20,7 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 - `ms-vscode-remote.remote-wsl` - permite abrir pastas, terminal, debug e extensoes dentro do ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
 - `ms-azuretools.vscode-containers` - Container Tools: gerencia containers, imagens, logs e servicos Docker Compose.
-- `ms-vscode.cpptools` - suporte oficial da Microsoft para C/C++, IntelliSense, navegacao e debug; formatacao desativada neste perfil.
+- `ms-vscode.cpptools` - suporte oficial da Microsoft para C/C++, IntelliSense, navegacao e debug; formatacao habilitada durante a edicao e desativada ao salvar.
 
 A combinacao de `ms-vscode-remote.remote-wsl` e `ms-vscode.cpptools` permite manter o VS Code no Windows e executar o projeto e a toolchain de C no Linux do WSL.
 
@@ -42,12 +42,12 @@ gcc main.c -o main
 
 ```json
 {
-  "editor.autoIndent": "none",
+  "editor.autoIndent": "full",
   "editor.detectIndentation": false,
   "editor.autoIndentOnPaste": false,
   "editor.formatOnSave": false,
   "editor.formatOnPaste": false,
-  "editor.formatOnType": false,
+  "editor.formatOnType": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.organizeImports": "never"
@@ -56,11 +56,11 @@ gcc main.c -o main
   "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
   "C_Cpp.default.cStandard": "c17",
   "C_Cpp.errorSquiggles": "enabled",
-  "C_Cpp.formatting": "disabled"
+  "C_Cpp.formatting": "default"
 }
 ```
 
-O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
+O perfil habilita a indentacao automatica e a formatacao ao digitar, quando a linguagem oferece esse suporte. Enter dentro de blocos usa a indentacao da linguagem. A formatacao ao salvar e colar e as acoes de correcao/organizacao de imports ao salvar continuam desativadas; Ctrl+S nao executa o formatador.
 
 Esses settings assumem uso dentro do WSL. Se o projeto for aberto fora do WSL, o `compilerPath` `/usr/bin/gcc` provavelmente nao existe no Windows e deve ser ajustado.
 
@@ -73,4 +73,4 @@ Esses settings assumem uso dentro do WSL. Se o projeto for aberto fora do WSL, o
 - `gdb` para debug.
 - `make` para projetos com `Makefile`.
 - `cmake` apenas quando o projeto usar CMake.
-- `clang-format` e opcional para formatacao pelo terminal; a formatacao de C/C++ esta desativada no perfil.
+- O formatador de C/C++ fica disponivel durante a edicao e para uso manual, sem formatacao automatica ao salvar.

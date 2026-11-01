@@ -19,7 +19,7 @@ Este perfil inclui a base compartilhada do [settings.json](../settings.json): te
 - `ms-vscode-remote.remote-wsl` - abre projetos no ambiente Linux do WSL.
 - `ms-vscode-remote.remote-containers` - abre projetos em dev containers com Docker.
 - `ms-azuretools.vscode-containers` - Container Tools: gerencia containers, imagens, logs e servicos Docker Compose.
-- `golang.go` - extensao oficial de Go, mantida pelo Go Team at Google, com suporte a linguagem, `gopls`, debug, testes e ferramentas da stack Go; formatacao automatica desativada neste perfil.
+- `golang.go` - extensao oficial de Go, mantida pelo Go Team at Google, com suporte a linguagem, `gopls`, debug, testes e ferramentas da stack Go; formatacao ao salvar desativada neste perfil.
 
 A extensao oficial cobre o que normalmente seria dividido em varias extensoes: IntelliSense, navegacao, diagnosticos, testes, debug com Delve e integracao com ferramentas como `gofmt`, `goimports` e `gopls`.
 
@@ -35,12 +35,12 @@ Para APIs Go, `humao.rest-client` e a escolha mais leve quando os requests devem
 
 ```json
 {
-  "editor.autoIndent": "none",
+  "editor.autoIndent": "full",
   "editor.detectIndentation": false,
   "editor.autoIndentOnPaste": false,
   "editor.formatOnSave": false,
   "editor.formatOnPaste": false,
-  "editor.formatOnType": false,
+  "editor.formatOnType": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.organizeImports": "never"
@@ -48,12 +48,12 @@ Para APIs Go, `humao.rest-client` e a escolha mais leve quando os requests devem
   "go.useLanguageServer": true,
   "go.toolsManagement.autoUpdate": true,
   "[go]": {
-    "editor.autoIndent": "none",
+    "editor.autoIndent": "full",
     "editor.detectIndentation": false,
     "editor.autoIndentOnPaste": false,
     "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
-    "editor.formatOnType": false,
+    "editor.formatOnType": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": "never",
       "source.organizeImports": "never"
@@ -64,7 +64,7 @@ Para APIs Go, `humao.rest-client` e a escolha mais leve quando os requests devem
 }
 ```
 
-O perfil desativa a indentacao automatica, a formatacao ao salvar, colar ou digitar e as acoes de correcao/organizacao de imports ao salvar. Tab e espacos continuam disponiveis para indentacao manual.
+O perfil habilita a indentacao automatica e a formatacao ao digitar, quando a linguagem oferece esse suporte. Enter dentro de blocos usa a indentacao da linguagem. A formatacao ao salvar e colar e as acoes de correcao/organizacao de imports ao salvar continuam desativadas; Ctrl+S nao executa o formatador.
 
 ## Ferramentas Externas
 
