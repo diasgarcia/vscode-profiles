@@ -60,11 +60,14 @@ Todos os perfis incluem as configuracoes do [settings.json](settings.json), com 
 - `editor.formatOnSave: false`
 - `editor.formatOnPaste: false`
 - `editor.formatOnType: true`
+- `dev.containers.mountWaylandSocket: false` para evitar a montagem grafica automatica do WSL
 - `editor.codeActionsOnSave`: `source.fixAll` e `source.organizeImports` como `never`
 - `files.insertFinalNewline: true`
 - `files.trimTrailingWhitespace: true`
 
 Os perfis nao incluem Prettier, EditorConfig, ESLint ou Ruff. As extensoes de linguagem de C/C++, Go, Java e YAML continuam presentes para autocomplete, navegacao, diagnosticos e debug quando disponiveis, com indentacao automatica e formatacao ao digitar quando a linguagem oferece suporte. Enter dentro de blocos acompanha a indentacao da linguagem, com quatro espacos nos perfis. A formatacao ao salvar e colar permanece desativada. A limpeza de espacos no fim das linhas e a insercao de uma quebra de linha final continuam habilitadas.
+
+`dev.containers.mountWaylandSocket` tem escopo de aplicacao: no VS Code instalado, configure essa chave como `false` nas configuracoes de usuario gerais para valer em todos os perfis. Isso evita a dependencia de um socket grafico do Debian/WSL ao usar Docker Desktop.
 
 Os arquivos seguem o formato exportado pelo VS Code: `name`, `settings`, `extensions` e `globalState`. O campo `globalState` fica presente apenas por compatibilidade, com `storage` vazio.
 

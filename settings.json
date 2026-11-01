@@ -55,5 +55,6 @@
     },
     "github.copilot.nextEditSuggestions.enabled": false,
     "containers.composeDetached": true,
-    "containers.composeBuild": true
+    "containers.composeBuild": true,
+    "dev.containers.mountWaylandSocket": false
 }
